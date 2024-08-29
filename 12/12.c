@@ -1,6 +1,6 @@
 /*
 ============================================================================
-Name : .c
+Name : 12.c
 Author : Aditya Vijay Shinde
 Description : Write a program to find out the opening mode of a file. Use fcntl.
 Date: 29th Aug, 2024.
