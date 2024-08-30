@@ -2,8 +2,9 @@
 ============================================================================
 Name : 17b.c
 Author : Aditya Vijay Shinde
-Description :Write a separate program, to open the file, implement write lock, read the ticket number, increment the number and print the new ticket number then close the file.
-Date: 29th Aug, 2024.
+Description :Write a separate program, to open the file, implement write lock, 
+read the ticket number, increment the number and print the new ticket number then close the file.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 //Update Ticket program

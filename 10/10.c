@@ -16,15 +16,13 @@ Date: 29th Aug, 2024.
 #include <stdlib.h>  // For exit()
 
 int main() {
-    // Open the file in read-write mode, create if it doesn't exist
-    int fd = open("testfile.txt", O_RDWR | O_CREAT, 0644);
+    int fd = open("rwfile.txt", O_RDWR | O_CREAT, 0644);
     if (fd < 0) {
-        perror("Error opening file");
+        perror("Error in opening the file");
         exit(1);
     }
 
-    // Write 10 bytes
-    char buffer1[10] = "ABCDEFGHIJ";
+    char buffer1[10] = "HelloWorld";
     ssize_t bytes_written = write(fd, buffer1, 10);
     if (bytes_written < 0) {
         perror("Error writing to file");
@@ -32,17 +30,15 @@ int main() {
         exit(1);
     }
 
-    // Move the file pointer forward by 10 bytes using lseek
     off_t offset = lseek(fd, 10, SEEK_CUR);
     if (offset == -1) {
         perror("Error seeking in file");
         close(fd);
         exit(1);
     }
-    printf("lseek returned offset: %ld\n", offset);
+    printf("offset returned by lseek: %ld\n", offset);
 
-    // Write another 10 bytes
-    char buffer2[10] = "1234567890";
+    char buffer2[10] = "HelloWorld";
     bytes_written = write(fd, buffer2, 10);
     if (bytes_written < 0) {
         perror("Error writing to file");
@@ -50,7 +46,18 @@ int main() {
         exit(1);
     }
 
-    // Close the file
     close(fd);
     return 0;
 }
+
+/*
+-----------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/10$ ./of10
+offset returned by lseek: 20
+-----------------------------------------------------------------
+
+rwfile.txt - output:
+HelloWorld\00\00\00\00\00\00\00\00\00\00HelloWorld
+
+*/

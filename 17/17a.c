@@ -4,7 +4,7 @@ Name : 17a.c
 Author : Aditya Vijay Shinde
 Description : Write a program to simulate online ticket reservation. Implement write lock
 Write a program to open a file, store a ticket number and exit.
-Date: 29th Aug, 2024.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 

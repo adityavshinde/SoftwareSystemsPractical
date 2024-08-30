@@ -5,8 +5,9 @@ Author : Aditya Vijay Shinde
 Description : Write a program to perform Record locking.
 a. Implement write lock
 b. Implement read lock
-Create three records in a file. Whenever you access a particular record, first lock it then modify/access to avoid race condition.
-Date: 29th Aug, 2024.
+Create three records in a file. Whenever you access a particular record, 
+first lock it then modify/access to avoid race condition.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 
@@ -85,4 +86,24 @@ int main() {
     close(fd);
     return 0;
 }
+
+/*
+--------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/18$ ./of18
+Lock applied on record 1.
+Lock released on record 1.
+Lock applied on record 0.
+Record 0: 
+Lock released on record 0.
+Lock applied on record 1.
+Record 1: Modified Record 2
+
+Lock released on record 1.
+Lock applied on record 2.
+Record 2: Modified Record 2
+
+Lock released on record 2.
+--------------------------------------------------------------
+*/
 

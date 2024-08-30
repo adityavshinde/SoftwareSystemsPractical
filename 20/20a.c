@@ -3,7 +3,7 @@
 Name : 20a.c
 Author : Aditya Vijay Shinde
 Description : Find out the priority of your running program.
-Date: 29th Aug, 2024.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 
@@ -28,3 +28,10 @@ int main() {
     return 0;
 }
 
+/*
+----------------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/20$ ./of20a
+Current priority of PID 39913: 0
+---------------------------------------------------------------------
+*/

@@ -3,7 +3,7 @@
 Name : 20b.c
 Author : Aditya Vijay Shinde
 Description : Modify the priority with nice command.
-Date: 29th Aug, 2024.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 
@@ -17,7 +17,7 @@ int main() {
 
     // Get and print the current priority
     int current_priority = getpriority(PRIO_PROCESS, pid);
-    printf("Current priority: %d\n", current_priority);
+    printf("Current priority of PID %d is : %d\n", pid, current_priority);
 
     // Modify the priority (increase the priority value to decrease the priority of the process)
     int new_priority = current_priority + 10;  // Increase priority by 10
@@ -28,8 +28,16 @@ int main() {
 
     // Print the new priority
     int updated_priority = getpriority(PRIO_PROCESS, pid);
-    printf("Updated priority: %d\n", updated_priority);
+    printf("Updated priority of PID %d is : %d\n", pid, updated_priority);
 
     return 0;
 }
 
+/*
+----------------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/20$ ./of20b
+Current priority of PID 39826 is : 0
+Updated priority of PID 39826 is : 10
+---------------------------------------------------------------------
+*/

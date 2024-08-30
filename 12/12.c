@@ -12,7 +12,7 @@ Date: 29th Aug, 2024.
 #include <unistd.h>  // For close()
 
 int main() {
-    int fd = open("testfile.txt", O_RDWR); // Open file in read-write mode
+    int fd = open("myfile.txt", O_RDWR); // Open file in read-write mode
     if (fd < 0) {
         perror("Error opening file");
         return 1;
@@ -31,3 +31,10 @@ int main() {
     return 0;
 }
 
+/*
+----------------------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/12$ ./of12
+File is in read-write mode
+----------------------------------------------------------------------------
+*/

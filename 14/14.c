@@ -19,33 +19,57 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    struct stat fileStat;
+    struct stat s;
 
     // Get file information using stat()
-    if (stat(argv[1], &fileStat) < 0) {
+    if (stat(argv[1], &s) < 0) {
         perror("Error getting file information");
         exit(1);
     }
 
     // Identify the file type
-    if (S_ISREG(fileStat.st_mode)) {
+    if (S_ISREG(s.st_mode)) {
         printf("The file '%s' is a regular file.\n", argv[1]);
-    } else if (S_ISDIR(fileStat.st_mode)) {
+    } 
+    else if (S_ISDIR(s.st_mode)) {
         printf("The file '%s' is a directory.\n", argv[1]);
-    } else if (S_ISLNK(fileStat.st_mode)) {
+    } 
+    else if (S_ISLNK(s.st_mode)) {
         printf("The file '%s' is a symbolic link.\n", argv[1]);
-    } else if (S_ISCHR(fileStat.st_mode)) {
+    } 
+    else if (S_ISCHR(s.st_mode)) {
         printf("The file '%s' is a character device.\n", argv[1]);
-    } else if (S_ISBLK(fileStat.st_mode)) {
+    } 
+    else if (S_ISBLK(s.st_mode)) {
         printf("The file '%s' is a block device.\n", argv[1]);
-    } else if (S_ISFIFO(fileStat.st_mode)) {
+    } 
+    else if (S_ISFIFO(s.st_mode)) {
         printf("The file '%s' is a FIFO (named pipe).\n", argv[1]);
-    } else if (S_ISSOCK(fileStat.st_mode)) {
+    } 
+    else if (S_ISSOCK(s.st_mode)) {
         printf("The file '%s' is a socket.\n", argv[1]);
-    } else {
+    } 
+    else {
         printf("The file '%s' type is unknown.\n", argv[1]);
     }
 
     return 0;
 }
 
+/*
+-----------------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/14$ ls
+14.c  of14
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/14$ mkdir directory
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/14$ mkfifo fifofile
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/14$ ls
+14.c  directory  fifofile  of14
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/14$ ./of14 directory
+The file 'directory' is a directory.
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/14$ ./of14 fifofile
+The file 'fifofile' is a FIFO (named pipe).
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/14$ ./of14
+Usage: ./of14 <filename>
+----------------------------------------------------------------------
+*/
