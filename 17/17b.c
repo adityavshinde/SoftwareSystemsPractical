@@ -70,3 +70,13 @@ int main() {
     return 0;
 }
 
+/* 
+-----------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/17$ ./of17b
+Write lock applied.
+Current ticket number: 1000
+New ticket number: 1001
+Lock released.
+-----------------------------------------------------------
+*/

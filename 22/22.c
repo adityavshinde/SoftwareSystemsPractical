@@ -2,8 +2,9 @@
 ============================================================================
 Name : 22.c
 Author : Aditya Vijay Shinde
-Description : Write a program, open a file, call fork, and then write to the file by both the child as well as the parent processes. Check output of the file.
-Date: 29th Aug, 2024.
+Description : Write a program, open a file, call fork, and then write to the 
+file by both the child as well as the parent processes. Check output of the file.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 
@@ -12,10 +13,11 @@ Date: 29th Aug, 2024.
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <string.h>
 
 int main() {
     // Open file for writing
-    int fd = open("example_file.txt", O_WRONLY | O_CREAT | O_TRUNC, 0666);
+    int fd = open("forkcall.txt", O_WRONLY | O_CREAT | O_TRUNC, 0666);
     if (fd < 0) {
         perror("Error opening file");
         return 1;
@@ -48,4 +50,18 @@ int main() {
     close(fd);
     return 0;
 }
+
+/*
+------------------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/22$ ./of22
+Parent Process: Written to file.
+Child Process: Written to file.
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/22$ ls
+22.c  forkcall.txt  of22
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/22$ cat forkcall.txt
+Message from parent process.
+Message from child process.
+------------------------------------------------------------------------
+*/
 

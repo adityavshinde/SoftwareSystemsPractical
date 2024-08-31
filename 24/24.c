@@ -3,7 +3,7 @@
 Name : 24.c
 Author : Aditya Vijay Shinde
 Description : Write a program to create an orphan process.
-Date: 29th Aug, 2024.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 
@@ -34,3 +34,13 @@ int main() {
     }
 }
 
+/*
+-------------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/24$ ./of24
+Parent PID: 5406                                        //running for 5 seconds 
+Child PID: 5407                                         //running for 30 seconds (total)
+Parent process exiting.                                 //output after 5 seconds
+Child process exiting.                                  //output after 25 seconds
+-------------------------------------------------------------------
+*/

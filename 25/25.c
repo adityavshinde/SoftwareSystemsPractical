@@ -58,3 +58,16 @@ int main() {
     return 0;
 }
 
+/* 
+-----------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/25$ ./of25
+Parent PID: 10494
+Second Child PID: 10496
+Waiting for second child with PID: 10496
+First Child PID: 10495
+Second child exited with status 0
+Third Child PID: 10497
+All child processes have terminated.
+-----------------------------------------------------------------
+*/

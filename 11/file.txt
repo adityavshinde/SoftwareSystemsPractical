@@ -1,0 +1,4 @@
+Original descriptor
+Dup descriptor
+Dup2 descriptor
+Fcntl descriptor

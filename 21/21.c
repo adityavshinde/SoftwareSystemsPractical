@@ -3,7 +3,7 @@
 Name : 21.c
 Author : Aditya Vijay Shinde
 Description : Write a program, call fork and print the parent and child process id.
-Date: 29th Aug, 2024.
+Date: 30th Aug, 2024.
 ============================================================================
 */
 
@@ -27,4 +27,13 @@ int main() {
 
     return 0;
 }
+
+/* 
+--------------------------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/21$ ./of21
+Parent Process: PID = 4411, Child PID = 4412
+Child Process: PID = 4412, Parent PID = 4411
+--------------------------------------------------------------------------------
+*/
 

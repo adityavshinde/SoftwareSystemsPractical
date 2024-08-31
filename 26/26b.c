@@ -14,11 +14,21 @@ Date: 29th Aug, 2024.
 int main() {
     printf("Parent Process PID: %d\n", getpid());
 
-    // Execute ./a.out with an argument "Alice"
-    execl("./a.out", "a.out", "Alice", (char *)NULL);
+    // Execute ./a.out with an argument "Aditya"
+    execl("./a.out", "a.out", "Aditya", (char *)NULL);    //execl( path, arg[0], arg[1], end )
 
     // If execl returns, an error occurred
     perror("execl");
     return 1;
 }
 
+/* 
+------------------------------------------------------------------
+output:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/26$ ls
+26a.c  26b.c  a.out  of26b
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/26$ ./of26b
+Parent Process PID: 9815
+Hello, Aditya!
+------------------------------------------------------------------
+*/

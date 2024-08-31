@@ -3,7 +3,7 @@
 Name : 30.c
 Author : Aditya Vijay Shinde
 Description : Write a program to run a script at a specific time using a Daemon process.
-Date: 29th Aug, 2024.
+Date: 31st Aug, 2024.
 ============================================================================
 */
 
@@ -19,8 +19,8 @@ void create_daemon() {
 }
 
 int main() {
-    int hour = 12, minute = 0;  // Set target time
-    const char *script = "/path/to/script.sh";  // Script path
+    int hour = 15, minute = 21;  // Set target time
+    const char *script = "/home/g3n1u5/SS/SoftwareSystemsPractical/30/script.sh";  // Script path
 
     create_daemon();
 
@@ -38,3 +38,10 @@ int main() {
     return 0;
 }
 
+/*
+---------------------------------------------------------
+output:
+g3n1u5@g3n1u5:/var/log$ cat daemon.log
+Daemon executed at Sat Aug 31 03:21:00 PM IST 2024
+---------------------------------------------------------
+*/

@@ -18,7 +18,7 @@ Date: 29th Aug, 2024.
 
 int main() {
     // Open the file in append mode (write only, create if it doesn't exist)
-    int fd = open("testfile.txt", O_WRONLY | O_APPEND | O_CREAT, 0644);
+    int fd = open("file.txt", O_WRONLY | O_APPEND | O_CREAT, 0644);
     if (fd < 0) {
         perror("Error opening file");
         return 1;
@@ -72,3 +72,22 @@ int main() {
     return 0;
 }
 
+/*
+
+---------------------------------------------------------
+contents of file.txt:
+Original descriptor
+Dup descriptor
+Dup2 descriptor
+Fcntl descriptor
+--------------------------------------------------------
+
+terminal cmds:
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/11$ ls
+11.c  of11
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/11$ ./of11
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/11$ ls
+11.c  file.txt  of11
+--------------------------------------------------------
+
+*/
