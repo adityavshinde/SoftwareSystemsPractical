@@ -1,1 +1,0 @@
-Find my mode. Is it read, write or read and write?

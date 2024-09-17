@@ -1,2 +1,0 @@
-Message from parent process.
-Message from child process.
