@@ -11,22 +11,29 @@ void handle_sigalrm(int signum) {
 int main() {
     struct itimerval timer;
 
-    // Register signal handler for SIGALRM
     signal(SIGALRM, handle_sigalrm);
 
-    // Set the interval timer to 10 seconds and 10 microseconds
     timer.it_value.tv_sec = 10;
     timer.it_value.tv_usec = 10;
     timer.it_interval.tv_sec = 10;
     timer.it_interval.tv_usec = 10;
 
-    // Start the ITIMER_REAL timer
     setitimer(ITIMER_REAL, &timer, NULL);
 
-    // Infinite loop to keep the program running
     while(1) {
-        pause(); // Wait for the signal
+        pause();
     }
 
     return 0;
 }
+
+/*
+------------------------------------------------------------------------
+OUTPUT:
+
+g3n1u5@g3n1u5:~/SS/SoftwareSystemsPractical/HandsOnList-2$ ./1a_out
+ITIMER_REAL timer expired!
+ITIMER_REAL timer expired!
+^C
+
+*/
