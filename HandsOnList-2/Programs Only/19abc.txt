@@ -1,0 +1,15 @@
+Q19-a)
+g3n1u5@g3n1u5:~/Desktop$ mkfifo fifo1
+g3n1u5@g3n1u5:~/Desktop$ ls
+fifo1
+
+Q19-b)
+g3n1u5@g3n1u5:~/Desktop$ mknod fifo2 p
+g3n1u5@g3n1u5:~/Desktop$ ls
+fifo1  fifo2
+
+Q19-c)
+mkfifo is more intuitive and specific for creating FIFO files, 
+though both eventually make the same system call (mknod). 
+But mkfifo is more user friendly.
+
