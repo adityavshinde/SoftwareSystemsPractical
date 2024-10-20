@@ -5,9 +5,9 @@
 
 struct Transaction
 {
-    int transactionID; // 0, 1, 2, 3 ...
+    int transactionID;
     int accountNumber;
-    bool operation; // 0 -> Withdraw, 1 -> Deposit
+    bool operation;
     long int oldBalance;
     long int newBalance;
     time_t transactionTime;
